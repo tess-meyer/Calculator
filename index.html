@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Calculator</title>
+<link rel="stylesheet" href="index.css">
+<script src="index.js"></script>
+<meta charset="UTF-8">
+</head>
+
+<body>
+    <div class=bg></div>
+    <div class=main>
+        <form name=form>
+            <input class="textview" name="textview">
+        </form>
+    <table>
+        <tr>
+            <td> <input type="button" input class="button" value="7" onclick="insert(7)"> </td>  
+            <td> <input type="button" input class="button" value="8" onclick="insert(8)"> </td> 
+            <td> <input type="button" input class="button" value="9" onclick="insert(9)"> </td> 
+            <td> <input type="button" input class="button" value="/" onclick="insert('/')"> </td>         </tr>           
+
+       
+        <tr>
+            <td> <input type="button" input class="button" value="4" onclick="insert(4)"> </td>  
+            <td> <input type="button" input class="button" value="5" onclick="insert(5)"> </td> 
+            <td> <input type="button" input class="button" value="6" onclick="insert(6)"> </td> 
+            <td> <input type="button" input class="button" value="*" onclick="insert('*')"> </td> 
+        </tr>
+        
+        <tr>
+            <td> <input type="button" input class="button" value="1" onclick="insert(1)"> </td>  
+            <td> <input type="button" input class="button" value="2" onclick="insert(2)"> </td> 
+            <td> <input type="button" input class="button" value="3" onclick="insert(3)"> </td> 
+            <td> <input type="button" input class="button" value="-" onclick="insert('-')"> </td> 
+        </tr>
+            
+        <tr>
+            <td> <input type="button" input class="button" value="." onclick="insert('.')"> </td>  
+            <td> <input type="button" input class="button" value="0" onclick="insert(0)"> </td> 
+            <td> <input type="button" input class="button" value="+" onclick="insert('+')"> </td> 
+            <td> <input type="button" input class="button" value="=" onclick="insert('=')"> </td>  
+        </tr>
+   
+    </table>
+    </div>
+
+
+</body>
+
+</html>
+
+
+<!-- create html, head, title, script, style tags + links
+body tags
+create generic body div "main"
+create form - requires name, imput class, name
+
+create table within? form. 
+create rows within table using tr tag 
+create cells using td tag - requres imput type (button), class, value (string), onclick= insert(1 etc)
+
+replicate until you get all necessary buttons -->
+
+
