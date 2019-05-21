@@ -10,7 +10,10 @@ function insert(num) {
 }
 
 function equals() {
-
+var i = document.form.textview.value
+if(i){
+document.form.textview.value = eval(i)
+}
 }
 
 function C() {
