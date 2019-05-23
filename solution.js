@@ -70,8 +70,7 @@ function storeNumber (button) {
 function calculate () { //create calculate function. 
   numArray.push(numString) //push numstring to numarray
   let currentNumber = Number(numArray[0]) 
-  //define current number and set value as the first item 
-  //in num array using js number function to change it from a string.
+  //define current number and set value as the first item in num array using js number function to change it from a string.
   for (var i = 0; i < numArray.length; i++) { //initiate for loop , starting from 0 - array.length
     let nextNumber = Number(numArray[i + 1]) // defne next number in numArray (i+1) also using js Number function
     let symbol = numArray[i]    // define symblol, set as the nth term of the numArray.

@@ -10,22 +10,22 @@ function listen() {
 
 function getButton() {
   let button = event.target.value;
-
+    console.log('yo', numArray)
   if (!isNaN(button) || button === ".") {
     number(button);
-  } else if (button === "AC") {
+  } else if (button === "C") {
     clearAll();
-  } else if (button === "CE") {
+  } else if (button === "←") {
     back();
   } else if (button === "=") {
     calculate();
   } else {
-    storeNumber();
+    storeNumber(button);
   }
 }
 
 function number(button) {
-    if (button === "0" || numString.includes(".")) {
+    if (button === "." && numString.includes(".")) {
     return;
   } else if (numString.charAt(0) === "0" && button === "0") {
     return;
@@ -41,15 +41,62 @@ function clearAll() {
   display.value = "0";
 }
 
-function back() {}
+function back() {
+  numString = ''
+  display.value = "0"}
 
 function storeNumber(button) {
-  if ((numString = "")) {
-    numArray.length -= 1;
+    if (numString === '' && numArray === '0') { 
+    return
+  } else  if (numString === '') {
+    numArray.length = numArray.length - 1;
     numArray.push(button);
   } else {
+    numArray.push(numString)
+    numArray.push(button)
+    numString = '';
   }
 }
+
+
+function calculate() {
+    console.log(21, numArray)
+    numArray.push(numString)
+    let currentNumber = Number(numArray[0]);
+    console.log(currentNumber)
+    console.log(20, numArray)
+    for (i = 0; i < numArray.length; i++) {
+        console.log(33, numArray)
+        let nextNumber = Number(numArray[i+1])
+        let symbol = numArray[i]
+        if (symbol === '+') {
+            currentNumber += nextNumber
+        }
+
+
+        if (symbol === '-') {
+            currentNumber = currentNumber - nextNumber
+        }
+
+
+        if (symbol === '*') {
+            currentNumber = currentNumber * nextNumber
+        }
+
+
+        if (symbol === '/') {
+            currentNumber = currentNumber / nextNumber
+        }
+    }
+    
+    if (currentNumber < 0) {
+        currentNumber=Math.abs(currentNumber) + '-' ; 
+    }
+    display.value = currentNumber;
+    numString = currentNumber    
+    numArray = []
+}
+
 
 //create string variable to hold buttons that have been pushed
 //create an empty array variable to push numbers to when calculating.
@@ -99,6 +146,8 @@ function storeNumber(button) {
 
 //Otherwise, (if the string isn’t empty), push the string to the array,
 //then push the operator to the array, then clear the string.
+
+//--------------------------------------------------------------
 
 //create calculate function.
 //push numstring to numarray
